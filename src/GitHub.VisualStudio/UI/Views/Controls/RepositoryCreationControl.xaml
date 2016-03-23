@@ -100,6 +100,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Label Grid.Column="0" Grid.Row="0" Target="{Binding ElementName=nameText}" Content="{x:Static prop:Resources.nameText}"/>
@@ -190,12 +191,22 @@
                     </ComboBox.ItemTemplate>
                 </uirx:FilteredComboBox>
 
-                <ui:HorizontalShadowDivider Grid.Row="7" Grid.ColumnSpan="2" Margin="0,12" />
+                <CheckBox
+                    x:Name="initReadme"
+                    Grid.Column="1"
+                    Grid.Row="7"
+                    Content="Create this repo with a README"
+                    IsChecked="True"
+                    Style="{StaticResource BlueRoundedCheckBox}"
+                    Margin="0,5,0,0"
+                    Padding="8,0,0,0" />
+
+                <ui:HorizontalShadowDivider Grid.Row="8" Grid.ColumnSpan="2" Margin="0,12" />
 
                 <ui:GitHubComboBox
                     x:Name="accountsComboBox"
                     Grid.Column="1"
-                    Grid.Row="8"
+                    Grid.Row="9"
                     Margin="0,0,0,8"
                     ItemsSource="{Binding Accounts}"
                     Style="{StaticResource GitHubComboBox}">
@@ -217,7 +228,7 @@
                 <CheckBox 
                     x:Name="makePrivate"
                     Grid.Column="1"
-                    Grid.Row="9"
+                    Grid.Row="10"
                     Content="{x:Static prop:Resources.makePrivateContent}"
                     Style="{DynamicResource BlueRoundedCheckBox}"
                     Padding="8,0,0,0" />
